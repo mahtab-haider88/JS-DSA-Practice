@@ -13,3 +13,17 @@ Javascript DSA programs
 
 1. Iterative Approach
 2. Recursive Approach
+
+# Dynamic Programming
+- Coming up with optimal solutions
+- It has two important terms
+    1. Overlapping Subproblems
+        a. Problem can be broken in subproblems which are repeated in nature
+        b. Ex. Fibonacci sequence
+    2. Optimal Substructure
+        a. 
+1. Memoization: Storing the result of expensive function calls and returning cached result when the same input occurs
+2. Tabulation: 
+
+         
+
