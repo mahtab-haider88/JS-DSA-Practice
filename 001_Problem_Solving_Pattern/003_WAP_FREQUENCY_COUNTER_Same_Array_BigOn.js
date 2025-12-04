@@ -3,7 +3,8 @@
 // Write a function called same_array which accepts two arrays.
 // The function should return true if every value in the first array has it's corresponding value squared in the second array.
 // The frequency of values must be the same.
-// For example, same_array([1,2,3], [4,1,9]) should return true because 1^2 = 1, 2^2 = 4, 3^2 = 9
+// For example, 
+// same_array([1,2,3], [4,1,9]) should return true because 1^2 = 1, 2^2 = 4, 3^2 = 9
 // same_array([1,2,3], [1,9]) should return false because the frequency of 4 is missing
 // same_array([1,2,1], [4,4,1]) should return false because the frequency of 1s do not match
 function same_array(arr1, arr2){
@@ -49,7 +50,7 @@ function same_array(arr1, arr2){
         }
     }
     return true 
-}
+}   
 console.log(same_array([2,4,2], [4,16,4]))
 
 console.log(same_array([2,1], [4, 4]))

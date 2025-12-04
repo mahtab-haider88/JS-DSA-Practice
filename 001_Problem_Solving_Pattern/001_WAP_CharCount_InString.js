@@ -9,14 +9,11 @@
 function charCount(str){
     const result = {}
 for (let c of str){
+    // Check if character is alphanumeric
     if(/^[a-zA-Z0-9]$/.test(c)){
         c = c.toLowerCase()
-        console.log('c: ', c)
-        console.log('result: ', result)
-        console.log('resultc: ', result[c])
+        // Check if character exists in result object
         result[c] = result[c] > 0 ? result[c]++ : 1
-        console.log('result2: ', result)
-        console.log('result2c: ', result[c])
     }
 }
 return result

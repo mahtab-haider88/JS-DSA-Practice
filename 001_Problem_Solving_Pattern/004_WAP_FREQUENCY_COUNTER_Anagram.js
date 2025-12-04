@@ -1,4 +1,4 @@
-function ANAGRAM(str1, str2) {
+function anagram(str1, str2) {
   // Check if lengths are different
   if (str1.length !== str2.length) {
     return false;
@@ -23,4 +23,4 @@ function ANAGRAM(str1, str2) {
   return true; // All counts matched
 }
 
-console.log(ANAGRAM("cinema", "iceman"));
+console.log(anagram("cinema", "iceman"));
