@@ -12,27 +12,29 @@ for (let c of str){
     // Check if character is alphanumeric
     if(/^[a-zA-Z0-9]$/.test(c)){
         c = c.toLowerCase()
+        // console.log('c: ', c);
+        // console.log('result[c]: ', result[c]);
         // Check if character exists in result object
-        result[c] = result[c] > 0 ? result[c]++ : 1
+        result[c] = result[c] ? result[c]+1 : 1
+        // console.log('result[c] after update: ', result[c]);
     }
 }
 return result
-
 }
 
 // Alphabets
 const response1 =  charCount("Hello")
-
-// // special characters
-// const response2 =  charCount("Hello!")
-
-// // Capital and small cases
-// const response3 =  charCount("Hello there!")
-
-// // Numbers
-// const response4 =  charCount("Hello there!, I live at 14041 Loop")
-
 console.log('response1: ', response1)
-// console.log('response2: ', response2)
-// console.log('response3: ', response3)
-// console.log('response4: ', response4)
+// special characters
+const response2 =  charCount("Hello!")
+
+// Capital and small cases
+const response3 =  charCount("Hello there!")
+
+// Numbers
+const response4 =  charCount("Hello there!, I live at 14041 Loop")
+
+
+console.log('response2: ', response2)
+console.log('response3: ', response3)
+console.log('response4: ', response4)

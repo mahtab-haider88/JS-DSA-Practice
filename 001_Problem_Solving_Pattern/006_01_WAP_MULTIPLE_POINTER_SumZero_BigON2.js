@@ -16,7 +16,7 @@ function sumZero(arr) {
       }
     }
   }
-  return undefined;
+  return [];
 }
 
 console.log(sumZero([-3, -2, -1, 0, 1, 2, 3]));

@@ -15,21 +15,7 @@ function same_array(arr1, arr2){
 
     let freqCounter1 = {}
     let freqCounter2 = {}   
-    // Build frequency counter objects
-    // Counting occurrences of each value in both arrays
-    // Using for...of loop to iterate through array values
-    // Then using objects to store frequency counts
-    // e.g. freqCounter1 = { '2': 2, '4': 1 } for arr1 = [2,4,2]
-    // e.g. freqCounter2 = { '4': 2, '16': 1 } for arr2 = [4,16,4]
-    // This allows for O(n) time complexity instead of O(n^2)
-    // Nested loops are avoided
-    // This is the frequency counter pattern
-    // It is very useful for comparing two data sets
-    // based on frequency of values
-    // rather than their order or position
-    // This pattern is common in DSA problems
-    // It helps optimize performance significantly
-    // especially with larger input sizes
+
     for(let val of arr1){
         freqCounter1[val]= freqCounter1[val] + 1 || 1
     }
@@ -56,3 +42,46 @@ console.log(same_array([2,4,2], [4,16,4]))
 console.log(same_array([2,1], [4, 4]))
 
 console.log(same_array([3,1,2,3,1], [9,9,4,1,1]))
+
+// Map-based Frequency Counter Pattern (using ES6 Map)
+// ---------------------------------------------------
+// This implementation mirrors the object-based frequency counter above,
+// but uses Map to store frequencies. Behavior and complexity remain O(n).
+function same_array_map(arr1, arr2){
+    if(arr1.length !== arr2.length){
+        console.log('Length Mismatch')
+        return false
+    }
+
+    const freqMap1 = new Map()
+    const freqMap2 = new Map()
+
+    for (let val of arr1){
+        freqMap1.set(val, (freqMap1.get(val) || 0) + 1)
+    }
+
+    for (let val of arr2){
+        freqMap2.set(val, (freqMap2.get(val) || 0) + 1)
+    }
+
+    console.log('freqMap1: ', freqMap1)
+    console.log('freqMap2: ', freqMap2)
+
+    for (let [key, count] of freqMap1.entries()){
+        const squareKey = key ** 2
+        if(!freqMap2.has(squareKey)){
+            console.log('Key Mismatch')
+            return false
+        }
+        if(freqMap2.get(squareKey) !== count){
+            console.log('Frequency Mismatch')
+            return false
+        }
+    }
+    return true
+}
+
+console.log('--- Map-based results ---')
+console.log(same_array_map([2,4,2], [4,16,4]))
+console.log(same_array_map([2,1], [4, 4]))
+console.log(same_array_map([3,1,2,3,1], [9,9,4,1,1]))
